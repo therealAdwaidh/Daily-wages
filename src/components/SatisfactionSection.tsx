@@ -4,7 +4,7 @@ export default function SatisfactionSection() {
   return (
     <section className="bg-[#F8FAF8] px-4 py-12 md:py-20">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-start text-green-900 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold lg:text-start text-center text-green-900 mb-12">
           Your satisfaction, <span className="header-text-color">guaranteed</span>
         </h2>
 

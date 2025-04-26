@@ -10,7 +10,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="flex w-full bg-white max-w-xl mx-auto rounded-full border border-gray-300 overflow-hidden">
+    <div className="flex w-full bg-white max-w-sm mx-auto rounded-full border border-gray-300  overflow-hidden">
       <input
         type="text"
         placeholder="What do you need help with?"

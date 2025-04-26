@@ -25,8 +25,33 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .header-text-color{
-  color:#1f387a ;
+  color:#1f377a ;
 }
 .body-main-text{
-  padding: 0rem 6rem;
+  padding: 0rem 7rem;
 }
+.category-mobile{
+  height: 6rem;
+  object-fit: cover;
+  width:100%;
+}
+.logo-header{
+  width: 100%;
+  height: auto;
+}
+.location{
+  display: flex;
+  align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+  .body-main-text {
+    padding: 0rem .4rem;
+  }
+  .logo-header{
+    width: 64%;
+    height: auto;
+  }
+}
+
+
