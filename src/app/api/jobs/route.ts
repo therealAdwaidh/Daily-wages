@@ -1,17 +1,18 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
 
 export async function POST(req: Request) {
-  const body = await req.json();
+  const body = await req.json()
+  const { title, description, location } = body
 
   const job = await prisma.job.create({
-    data: {
-      ...body,
-      createdById: 1, // temporary user ID
-    },
-  });
+    data: { title, description, location },
+  })
 
-  return NextResponse.json(job);
+  return NextResponse.json(job)
 }
 
 export async function GET() {

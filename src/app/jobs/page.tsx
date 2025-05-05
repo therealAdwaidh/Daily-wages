@@ -1,9 +1,11 @@
 // app/jobs/page.tsx
 import JobCard from '@/components/JobCard';
 import Link from 'next/link';
+import StatusButtons from '@/components/StatusButtons';
 
 type Job = {
   id: number;
+  image:string;
   title: string;
   description: string;
   category: string;
@@ -26,6 +28,7 @@ export default async function JobsPage() {
   const jobsToRender = jobs.length > 0 ? jobs : [
     {
       id: 1,
+      image: "AdobeStock_197426992.webp",
       title: "Frontend Developer",
       description: "We're looking for a skilled frontend developer with experience in React and Next.js...",
       category: "Development",
@@ -37,14 +40,16 @@ export default async function JobsPage() {
   ];
   
   return (
-    <div className="max-w-4xl mx-auto px-4 py-6">
-      <h1 className="text-3xl font-bold mb-6">Available Jobs</h1>
+    <div className="max-w-4xl mx-auto px-4 py-6 bg-white">
+      <h1 className="text-lg font-bold mb-6 text-black"> Jobs</h1>
       
       <div className="space-y-4 ">
+        <StatusButtons/>
         {/* Use jobsToRender instead of jobs here */}
         {jobsToRender.map((job: Job) => (
           <Link key={job.id} href={`/jobs/${job.id}`}>
           <JobCard
+             image={job.image} // <-- Added this line
             key={job.id}
             id={job.id}
             title={job.title}

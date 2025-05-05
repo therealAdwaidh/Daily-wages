@@ -28,6 +28,9 @@ body {
   color:#1f377a ;
 }
 .body-main-text{
+  padding: 0rem 22rem;
+}
+.body-main-text2{
   padding: 0rem 7rem;
 }
 .category-mobile{
@@ -36,6 +39,10 @@ body {
   width:100%;
 }
 .logo-header{
+  width: 100%;
+  height: auto;
+}
+.logo-header2{
   width: 100%;
   height: auto;
 }
@@ -48,8 +55,15 @@ body {
   .body-main-text {
     padding: 0rem .4rem;
   }
+  .body-main-text2{
+    padding: 0rem .4rem;
+  }
   .logo-header{
-    width: 64%;
+    width: 80%;
+    height: auto;
+  }
+  .logo-header2{
+    width: 54%;
     height: auto;
   }
 }
