@@ -10,7 +10,7 @@ const Calendar = () => {
 
   const renderHeader = () => {
     return (
-      <div className="flex justify-between text-black items-center mb-4">
+      <div className="flex justify-between  bg-white text-black items-center p-2">
         <button onClick={() => setCurrentMonth(subMonths(currentMonth, 1))}>{'<'}</button>
         <div className="text-lg font-bold">
           {format(currentMonth, 'MMMM yyyy')}
@@ -22,7 +22,7 @@ const Calendar = () => {
 
   const renderDays = () => {
     return (
-      <div className="grid grid-cols-7 text-center text-gray-500 font-semibold">
+      <div className="grid grid-cols-7  bg-white text-center py-2 text-gray-500 font-semibold">
         {daysOfWeek.map((day, index) => (
           <div key={index}>{day}</div>
         ))}
@@ -47,9 +47,9 @@ const Calendar = () => {
         const cloneDay = day;
         days.push(
           <div
-            className={`text-center p-2 m-[1px] rounded-md cursor-pointer transition-all
-              ${!isSameMonth(day, monthStart) ? 'text-gray-500' : ''}
-              ${isSameDay(day, today) ? 'bg-black text-white' : 'bg-gray-100'}
+            className={`text-center p-2 m-[1px] rounded-4xl cursor-pointer  border-color bg-white border transition-all
+              ${!isSameMonth(day, monthStart) ? 'text-gray-200' : ''}
+              ${isSameDay(day, today) ? 'backgroundcolor3 text-white' : 'bg-gray-100'}
               ${format(cloneDay, 'd MMM yyyy') === '13 Jan 2022' ? 'bg-black text-white' : ''}`}
             key={day.toString()}
           >
@@ -69,12 +69,15 @@ const Calendar = () => {
   };
 
   return (
-    <div className="w-full max-w-sm mx-auto p-4 rounded-xl shadow-md bg-white">
+    <div className="w-full max-w-sm  mx-auto p-4 rounded-xl  shadow-md">
       {renderHeader()}
       {renderDays()}
       {renderCells()}
-      <div className="mt-4 text-center text-sm text-gray-500">
+      <div className="mt-4 text-center text-sm text-gray-500 ">
         Today is {format(today, 'eeee, MMMM d, yyyy')}
+      </div>
+      <div className="py-4 flex justify-center">
+        <button className='backgroundcolor3 text-white py-2 px-5 w-80 rounded-4xl'>Create Job</button>
       </div>
     </div>
   );

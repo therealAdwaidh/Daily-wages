@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SessionProvider } from 'next-auth/react';
-import  Header  from "@/components/Header";
+import  Header  from "@/components/common/Header";
 import BottomNav from "@/components/BottomNav";
 
 const geistSans = Geist({

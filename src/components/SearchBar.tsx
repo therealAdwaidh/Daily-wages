@@ -10,14 +10,14 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="p-5">
-      <div className="flex w-full bg-white  max-w-sm mx-auto rounded-full border border-gray-300  overflow-hidden">
+    <div className=" backgroundcolor">
+      <div className="flex  backgroundcolor max-w-xs mx-auto rounded-full border border-gray-300  overflow-hidden">
       <input
         type="text"
         placeholder="What do you need help with?"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="flex-grow px-6 py-3 text-gray-700 placeholder-gray-400 focus:outline-none"
+        className="flex-grow px-6 py-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none"
       />
       <button
         onClick={handleSearch}

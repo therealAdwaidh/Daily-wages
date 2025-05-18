@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function HowItWorks() {
   return (
-    <section className="bg-[#FFFDEB] py-10 px-4 md:px-12">
+    <section className="backgroundcolor py-10 px-4 md:px-12">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row rounded-xl overflow-hidden">
         {/* Left Content Box */}
         <div className="bg-white shadow-md rounded-xl p-8 flex-1 md:max-w-md">
