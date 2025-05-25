@@ -2,20 +2,20 @@
 
 import { useState } from 'react';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
-import { useRouter } from 'next/navigation';
 
-export default function LoginPage() {
+export default function SignUpPage() {
   const supabase = useSupabaseClient();
-  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    setMessage(null);
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signUp({
       email,
       password,
     });
@@ -23,14 +23,14 @@ export default function LoginPage() {
     if (error) {
       setError(error.message);
     } else {
-      router.push('/dashboard'); // Redirect after login
+      setMessage('Check your email for a confirmation link!');
     }
   };
 
   return (
     <main>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
+      <h1>Sign Up</h1>
+      <form onSubmit={handleSignUp}>
         <input
           type="email"
           placeholder="Email"
@@ -45,10 +45,11 @@ export default function LoginPage() {
           required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
       </form>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
+      {message && <p style={{ color: 'green' }}>{message}</p>}
     </main>
   );
 }

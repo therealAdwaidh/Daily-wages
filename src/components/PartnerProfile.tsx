@@ -29,7 +29,7 @@ export default function ElectricianProfile() {
       <div className="flex items-center gap-4">
         <div className="relative w-24 h-24">
           <Image
-            src="/warren-buffet.jpg"
+            src="/profile.jpg"
             alt="Electrician Sasi"
             fill
             className="rounded-full object-cover border-4 border-orange-500 shadow-sm"

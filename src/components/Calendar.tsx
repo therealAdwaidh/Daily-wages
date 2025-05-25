@@ -47,9 +47,9 @@ const Calendar = () => {
         const cloneDay = day;
         days.push(
           <div
-            className={`text-center p-2 m-[1px] rounded-4xl cursor-pointer  border-color bg-white border transition-all
-              ${!isSameMonth(day, monthStart) ? 'text-gray-200' : ''}
-              ${isSameDay(day, today) ? 'backgroundcolor3 text-white' : 'bg-gray-100'}
+            className={`text-center p-2 m-[1px] rounded-4xl  cursor-pointer border transition-all
+              ${!isSameMonth(day, monthStart) ? 'text-gray-200' : 'text-gray-600'}
+              ${isSameDay(day, today) ? 'backgroundcolor3 text-white' : 'bg-gray-200'}
               ${format(cloneDay, 'd MMM yyyy') === '13 Jan 2022' ? 'bg-black text-white' : ''}`}
             key={day.toString()}
           >
@@ -69,7 +69,7 @@ const Calendar = () => {
   };
 
   return (
-    <div className="w-full max-w-sm  mx-auto p-4 rounded-xl  shadow-md">
+    <div className="w-full max-w-sm  mx-auto p-4 rounded-xl bg-white shadow-md">
       {renderHeader()}
       {renderDays()}
       {renderCells()}

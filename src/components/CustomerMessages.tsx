@@ -15,13 +15,13 @@ const customerMessages: CustomerMessage[] = [
     id: 1,
     name: "Customer 1",
     message: "When will you be coming?",
-    avatar: "/Sierra-Langston-Hart.jpg",
+    avatar: "/customer1.jpg",
   },
   {
     id: 2,
     name: "Customer 2",
     message: "I want it urgent. The kitchen is flooded",
-    avatar: "/Sierra-Langston-Hart.jpg",
+    avatar: "/customer2.jpg",
   },
   // ... other messages
 ];
